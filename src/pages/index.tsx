@@ -10,6 +10,52 @@ import { Navbar } from "../components/layout/navbar";
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
 
+  // TODO: get this from the DB
+  const cards = [
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    },
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    },
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    },
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    },
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    },
+    {
+      id: "123ABCD",
+      name: "Suga",
+      group: "BTS",
+      album: "Love Yourself",
+      pcImageUrl: "https://data.whicdn.com/images/318419844/original.jpg",
+    }
+  ]
+
   return (
     <>
       <Head>
@@ -18,17 +64,16 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-        <Navbar/>
-        <div className="mt-3 grid gap-3 pt-3 text-center md:grid-cols-3 lg:w-2/3">
+        <div className="mt-3 grid gap-5 pt-3 text-center md:grid-cols-3 lg:w-2/3">
           {
-            [...Array(10)].map(() =>
+            cards.map(({ name, group, album, pcImageUrl, id }) =>
               <CompactPhotocard
-                key="123-456-abcdefg"
-                name="Suga"
-                artist="BTS"
-                album="Love Yourself"
-                pcImageUrl="https://data.whicdn.com/images/318419844/original.jpg"
-                id="123-456-abcdefg"
+                key={id}
+                name={name}
+                artist={group}
+                album={album}
+                pcImageUrl={pcImageUrl}
+                id={id}
               />
             )
           }
