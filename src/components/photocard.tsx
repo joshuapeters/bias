@@ -8,14 +8,14 @@ type PhotocardProps = {
   id: string
 }
 
-export const CompactPhotocard = ({ name, artist, album, pcImageUrl, id }: PhotocardProps) => {
+export const CompactPhotocard: React.FC<PhotocardProps> = ({ name, artist, album, pcImageUrl, id }: PhotocardProps) => {
 
   return (
-    <div className="card bg-base-100 shadow-xl group relative w-36 md:w-48 xl:w-64">
-      <figure className="group-hover:brightness-50">
+    <div tabIndex={0} className="card bg-base-100 shadow-xl group relative w-36 md:w-48 git sxl:w-64">
+      <figure className="group-hover:brightness-50 group-focus:brightness-50">
         <img src={pcImageUrl} alt="photocard" />
       </figure>
-      <div className="card-body invisible w-4/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:visible">
+      <div className="card-body invisible w-4/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:visible group-focus:visible">
         <h2 className="text-center"><b>{name}</b></h2>
         <p>{artist}</p>
         <p>{album}</p>

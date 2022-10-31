@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { trpc } from "../utils/trpc";
 import { CompactPhotocard } from "../components/photocard";
 import { Navbar } from "../components/layout/navbar";
+import { randomUUID } from "crypto";
 
 const Home: NextPage = () => {
   const hello = trpc.example.hello.useQuery({ text: "from tRPC" });
